@@ -12,14 +12,16 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(value = "/services/books", method = RequestMethod.POST)
 public class SearchController {
 
     @Autowired
     private SearchService searchService;
 
-    @RequestMapping(value = "/getDetails", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)
-    public void getDetails(@RequestBody Book book) {
-
+    public void indexBook(@RequestBody Book book) {
+        searchService.indexBook(book);
     }
+
 }

@@ -8,12 +8,12 @@ public class Book {
 
     @Id
     private String id;
+
     private String title;
     private String author;
     private String releaseDate;
 
-    public Book() {
-    }
+    public Book() {}
 
     public Book(String id, String title, String author, String releaseDate) {
         this.id = id;
@@ -22,7 +22,37 @@ public class Book {
         this.releaseDate = releaseDate;
     }
 
-    //getters and setters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
 
     @Override
     public String toString() {

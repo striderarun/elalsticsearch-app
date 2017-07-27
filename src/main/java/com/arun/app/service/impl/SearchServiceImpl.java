@@ -4,8 +4,9 @@ import com.arun.app.beans.Book;
 import com.arun.app.repository.BookRepository;
 import com.arun.app.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class SearchServiceImpl implements SearchService {
 
     @Autowired
