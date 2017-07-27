@@ -1,7 +1,9 @@
 package com.arun.app.service;
 
-/**
- * Created by arun_subramonian on 7/26/17.
- */
+
+import com.arun.app.beans.Book;
+
 public interface SearchService {
+
+    void indexBook(Book book);
 }
