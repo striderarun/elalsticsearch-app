@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SearchServiceImpl implements SearchService {
 
@@ -22,5 +24,10 @@ public class SearchServiceImpl implements SearchService {
     @Override
     public Page<Book> findByAuthor(String author, Pageable pageable) {
         return bookRepository.findByAuthor(author, pageable);
+    }
+
+    @Override
+    public List<Book> findByTitle(String title) {
+        return bookRepository.findByTitle(title);
     }
 }
