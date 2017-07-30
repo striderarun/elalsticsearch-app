@@ -24,18 +24,36 @@ public class SearchController {
     @Autowired
     private SearchService searchService;
 
+    /**
+     * Index a new book
+     *
+     * @param book
+     */
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)
     public void indexBook(@RequestBody Book book) {
         searchService.indexBook(book);
     }
 
+    /**
+     * Query for books by author
+     *
+     * @param author
+     * @param pageable
+     * @return
+     */
     @RequestMapping(value = "/author/{author}", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public Page<Book> findBooksByAuthors(@PathVariable String author, @PageableDefault Pageable pageable) {
         return searchService.findByAuthor(author, pageable);
     }
 
+    /**
+     * Query for books by title
+     *
+     * @param title
+     * @return
+     */
     @RequestMapping(value = "/title/{title}", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public List<Book> findBooksByTitle(@PathVariable String title) {
