@@ -1,16 +1,25 @@
 package com.arun.app.beans;
 
+import com.arun.app.common.JsonDocConstants;
+import org.jsondoc.core.annotation.ApiObject;
+import org.jsondoc.core.annotation.ApiObjectField;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
+@ApiObject(group = JsonDocConstants.BOOKS, name = "Book")
 @Document(indexName = "arun", type = "books")
 public class Book {
 
     @Id
     private String id;
 
+    @ApiObjectField(description = "Book Title")
     private String title;
+
+    @ApiObjectField(description = "Author Name")
     private String author;
+
+    @ApiObjectField(description = "Release Date")
     private String releaseDate;
 
     public Book() {}
